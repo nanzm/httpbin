@@ -1198,7 +1198,7 @@ def digest_auth(
 
 @app.route("/delay/<delay>", methods=["GET", "POST", "PUT", "DELETE", "PATCH", "TRACE"])
 def delay_response(delay):
-    """Returns a delayed response (max of 10 seconds).
+    """Returns a delayed response (max of 3600 seconds).
     ---
     tags:
       - Dynamic data
@@ -1210,9 +1210,9 @@ def delay_response(delay):
       - application/json
     responses:
       200:
-        description: A delayed response.
+        description: A delayed response test.
     """
-    delay = min(float(delay), 10)
+    delay = min(float(delay), 3600)
 
     time.sleep(delay)
 
