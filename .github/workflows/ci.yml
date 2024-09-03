@@ -65,7 +65,7 @@ jobs:
           echo "APP_VERSION=$(/tmp/tomlq/bin/tomlq -r .project.version pyproject.toml)" >> $GITHUB_ENV
           echo "APP_DESC=$(/tmp/tomlq/bin/tomlq -r .project.description pyproject.toml)" >> $GITHUB_ENV
       - name: Retrieve tested requirements file
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4.1.7
         with:
           name: requirements.txt
       - name: Ensure docker build is working
